@@ -6,8 +6,18 @@ import Experience from './Experience'
 
 const root = ReactDOM.createRoot(document.querySelector('#root'))
 
+const created = (state) => {
+  console.log(state);
+}
+const onEvent = (event) => {
+  console.log(event);
+}
 root.render(
-  <Canvas>
+  <Canvas
+    shadows={false}
+    onCreated={created}
+    onPointerMissed={onEvent}
+  >
     <Experience></Experience>
   </Canvas>
 )
